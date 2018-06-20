@@ -194,23 +194,16 @@ state-of-the-art approaches.
 <div class="section">
   <h2>Method</h2>
   <div class="paper">
-  As shown in the above figure, we propose the architecture of hybrid fully convolutional networks (H-FCN) for actionness estimation in videos. In addition, based on actionness maps, we develop a action proposal generation method and present a more unified action detection framework. 
-		  <br><br>
-		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong>Hybrid fully convolutional networks: </strong> H-FCN is composed of appearance fully convolutional network (A-FCN) and motion fully convolutional network (M-FCN). These two FCNs capture visual information for actionness estimation from the perspectives of static appearance and dynamic motion, respectively.
-		  </li>
-		  <br>
-		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong>Actionness estimation: </strong> A-FCN takes a single RGB image as input and M-FCN deals with two consecutive optical flow fields. In order to deal with scale variations,  We construct pyramid representations of RGB frames and stacking optical flow fields. These actionness maps from different scales are first up-sampled to the size of original image and then averaged.
-		  </li>
-		  <br>
-		  <li style = "list-style-type:square; margin-left:0px">
-		  <strong>Action proposal generation: </strong> Actionness maps are generic visual features and can be exploited for different vision problems. Here, we propose a sampling method to generate action proposals based on estimated actionness maps. We sample boxes according to their scores and spatial overlaps.
-		  </li>
-      <br>
-      <li style = "list-style-type:square; margin-left:0px">
-      <strong>Action detection: </strong> Following R-CNN, we train an action classifier with two-stream CNNs by cropping positive examples and mining negative examples. At test time, we directly use the output of two-stream CNNs as the detection score for each action proposal.
-      </li>
+ We proposed Recurrent Pose-Attention Network (RPAN), which can dynamically identify
+the important pose-related feature to enhance every timestep action prediction of LSTM. First, the current frame is
+fed into CNN to generate a convolutional feature cube. Then,
+our pose-attention mechanism takes the previous hidden state
+of LSTM as a guidance to estimate a number of human-partrelated features from the current convolutional cube. Due to
+the fact that we partially share the attention parameters on
+semantic-related human joints, the learnt human-part features can encode rich and robust body-structure-information
+for occlusions. Finally, these features are fed into a humanpart pooling layer, which produces a discriminative poserelated feature for LSTM modeling
+	  <br><br>
+		  
 		  <br>
   </div>
 </div>
