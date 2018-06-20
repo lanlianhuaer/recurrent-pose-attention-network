@@ -168,8 +168,25 @@ div.paper pre {
 <div class="section">
   <h2>Abstract</h2>
   <div class="paper">
-  Actionness was introduced to quantify the likelihood of containing a generic action instance at a specific location. Accurate and efficient estimation of actionness is important in video analysis and may benefit other relevant tasks such as action recognition and action detection. This paper presents a new deep architecture for actionness estimation, called hybrid fully convolutional network (H-FCN), which is composed of appearance FCN (A-FCN) and motion FCN (M-FCN). These two FCNs leverage the strong capacity of deep models to estimate actionness maps from the perspectives of static appearance and dynamic motion, respectively. In addition, the fully convolutional nature of H-FCN allows it to efficiently process videos with arbitrary sizes. Experiments are conducted on the challenging datasets of Stanford40, UCF Sports, and JHMDB to verify the effectiveness of H-FCN on actionness estimation, which demonstrate that our method achieves superior performance to previous ones. Moreover, we apply the estimated actionness maps on action proposal generation and action detection. Our actionness maps advance the current state-of-the-art performance of these tasks substantially.
-  </div>
+  The recent studies have demonstrated the effectiveness of Recurrent Neural Networks (RNNs) for action
+recognition in videos. However, the previous works mainly
+utilize video-level category as supervision to train RNNs,
+which may prohibit RNNs to capture complex temporal structures along time. In this paper, we propose a Recurrent PoseAttention Network (RPAN) to address this challenge, where
+we introduce a novel pose-attention mechanism to adaptively
+learn pose-related features at every time-step action prediction of RNNs. First, unlike previous works on pose-related
+action recognition, our RPAN is an end-to-end recurrent network, which can exploit the important spatial-temporal pose
+evolutions to assist action recognition in a unified framework. Second, instead of using the human-joint features individually, our pose-attention can learn a number of robust
+human-part features to alleviate the negative influence of
+occlusions on action recognition. Furthermore, we flexibly
+extend pose-attention to a RPAN ZERO version, in order
+to handle the realistic scenarios where not all the joints are
+shown in the videos. Third, one important byproduct of our
+RPAN is video pose estimation, which can be used for coarse
+annotations of human pose in videos. Finally, we evaluate
+RPAN and its variants on the popular benchmarks of poserelated action recognition, i.e., Sub-JHMDB, PennAction and
+JHMDB. The results show that, our RPAN outperforms the
+state-of-the-art approaches. 
+</div>
 </div>
 </div>
 
