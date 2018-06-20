@@ -195,13 +195,20 @@ state-of-the-art approaches.
   <h2>Method</h2>
   <div class="paper">
  We proposed Recurrent Pose-Attention Network (RPAN), which can dynamically identify
-the important pose-related feature to enhance every timestep action prediction of LSTM. First, the current frame is
-fed into CNN to generate a convolutional feature cube. Then,
+the important pose-related feature to enhance every timestep action prediction of LSTM. 
+	  <br>
+	  First, the current frame is
+fed into CNN to generate a convolutional feature cube. 
+	  <br>
+	  Then,
 our pose-attention mechanism takes the previous hidden state
 of LSTM as a guidance to estimate a number of human-partrelated features from the current convolutional cube. Due to
 the fact that we partially share the attention parameters on
 semantic-related human joints, the learnt human-part features can encode rich and robust body-structure-information
-for occlusions. Finally, these features are fed into a humanpart pooling layer, which produces a discriminative poserelated feature for LSTM modeling
+for occlusions. 
+	  <br>
+	  Finally, these features are fed into a humanpart pooling layer, which produces a discriminative 
+	  poserelated feature for LSTM modeling.
 	  <br><br>
 		  
 		  <br>
